@@ -5,27 +5,32 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Vue Js Data Binding</title>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<style type="text/css">
+		.one{
+			color: darkred;
+		}
+
+		.two{
+			text-decoration: line-through;
+		}
+	</style>
 </head>
 <body>
 
 	<div id="app"> 
-		<h1>{{ myName() }}</h1>
-		<h1>{{ myAge(24) }}</h1>
+		<a v-bind:href="google">Google</a>
+		<h1 :class="classes">Classes dynamic</h2>
+		<input type="" name="name" :value="name">
 	</div>
 
 	<script>
 		let app = new Vue({
 			el:'#app',
 			data:{
-				name: 'Hello Vue Js',
-			},
-			methods:{
-				myName(){
-					return this.name;
-				},
-				myAge(age){
-					return `${this.name} and my age is ${age}`;
-				}
+				google: 'https://google.com',
+				classes: ['one','two'],
+				name:'Md Nur Alam'
 			}
 		})	
 	</script>
