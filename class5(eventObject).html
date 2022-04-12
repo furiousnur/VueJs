@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Vue Js Event Objects</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+	<style type="text/css">
+		.canvas{
+			height: 240px;
+			width: 240px;
+			margin-top: 20px;
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="app"> 
+		<button @click="Me">Click Here</button>
+
+		<div class="canvas" @mousemove="over">
+			{{log.x}}, {{log.y}}
+		</div>
+
+		<br>
+		<div class="canvas" @mousemove="orverSecondTime">
+			{{secondLog.x}}, {{secondLog.y}}
+		</div>
+	</div>
+
+	<script>
+		let app = new Vue({
+			el:'#app',
+			data:{
+				log:{
+					x:0,
+					y:0
+				},
+				secondLog:{
+					x:0,
+					y:0
+				}
+			},
+			methods:{
+				Me(event){
+					console.log(event);
+				},
+				over(e){
+					this.log.x = event.offsetX;
+					this.log.y = event.offsetY; 
+				},
+				orverSecondTime(e){
+					this.secondLog.x = event.offsetX;
+					this.secondLog.y = event.offsetY;
+				}
+			}
+		})	
+	</script>
+</body>
+</html>
