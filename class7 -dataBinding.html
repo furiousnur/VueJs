@@ -3,20 +3,21 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Vue Js Keyboard Event</title>
+	<title>Vue Js Two way data binding</title>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
 </head>
 <body>
 
 	<div id="app"> 
-		
+		This is {{name}} <br>
+		<input type="text" name="" v-model="name">
 	</div>
 
 	<script>
 		let app = new Vue({
 			el:'#app',
 			data:{
-				
+				name:"Data binding"
 			},
 			methods:{
 
