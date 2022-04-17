@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Vue Js Keyboard Event</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+	<style type="text/css">
+		.canvas{
+			height: 240px;
+			width: 240px;
+			margin-top: 20px;
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="app"> 
+		<h2>My name is {{name}}</h2>
+		<input type="text" name="" @keyup="nameChange">
+	</div>
+
+	<script>
+		let app = new Vue({
+			el:'#app',
+			data:{
+				name: 'Nur ALam',
+				val: ''
+			},
+			methods:{
+				nameChange(e){
+					console.log(e.target.value);
+					this.name = e.target.value; 
+				}
+			}
+		})	
+	</script>
+</body>
+</html>
