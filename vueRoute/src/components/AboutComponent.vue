@@ -1,5 +1,5 @@
 <template>
-  <div class="AboutComponent">
+  <div class="aboutComponent">
     <h2>{{ pageTitle}}</h2>
 
   </div>

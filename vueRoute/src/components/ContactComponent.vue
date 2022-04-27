@@ -1,5 +1,5 @@
 <template>
-  <div class="ContactComponent">
+  <div class="contactComponent">
     <h2>{{ pageTitle}}</h2>
 
   </div>
