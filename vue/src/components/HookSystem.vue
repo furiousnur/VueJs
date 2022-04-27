@@ -18,12 +18,12 @@ export default {
       this.title = 'Hook Update Part'
     }
   },
-  beforeCreate() {
-    alert('before create');
-  },
-  created() {
-    alert('created');
-  },
+  // beforeCreate() {
+  //   alert('before create');
+  // },
+  // created() {
+  //   alert('created');
+  // },
   beforeUpdate() {
     alert('Do you really wants to update Hook name?');
   }

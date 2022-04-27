@@ -5,6 +5,7 @@
       <AllFriends :friends="friends" @delete="deleteFriend"></AllFriends>
       <OnlineFriends :friends="friends"></OnlineFriends>
       <HookSystem></HookSystem>
+      <PostComponent></PostComponent>
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import NavBar from "@/components/NavBar";
 import AllFriends from "@/components/AllFriends";
 import OnlineFriends from "@/components/OnlineFriends";
 import HookSystem from "@/components/HookSystem";
+import PostComponent from "@/components/PostComponent";
 export default {
   name: 'App',
   data(){
@@ -31,7 +33,8 @@ export default {
     HookSystem,
     NavBar,
     AllFriends,
-    OnlineFriends
+    OnlineFriends,
+    PostComponent
   },
   methods:{
     deleteFriend(friendName){
