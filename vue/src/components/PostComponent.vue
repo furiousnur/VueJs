@@ -1,13 +1,16 @@
 <template>
   <div>
-    <h1>{{ title }}</h1>
+    <h1>{{ headerTitle }}</h1>
+    <hr>
+    <input type="text" v-model="searchTerm" placeholder="Search">
+    <hr>
       <table>
         <tr>
           <th>ID</th>
           <th>Title</th>
           <th>Body</th>
         </tr>
-        <tr v-for="post in posts" :key="post.id">
+        <tr v-for="post in filterSearch" :key="post.id">
           <td>{{post.id}}</td>
           <td>{{post.title}}</td>
           <td>{{post.body | snippet}}</td>
@@ -23,8 +26,16 @@ export default {
   name: "PostComponent",
   data() {
     return {
-      title: 'Post Part',
-      posts:[]
+      headerTitle: 'Post Part',
+      posts:[],
+      searchTerm: ''
+    }
+  },
+  computed:{
+    filterSearch(){
+      return this.posts.filter(post=>{
+        return post.title.match(this.searchTerm) || post.body.match(this.searchTerm)
+      })
     }
   },
   methods:{
