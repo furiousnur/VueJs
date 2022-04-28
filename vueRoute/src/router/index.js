@@ -9,27 +9,27 @@ import ProfileComponent from "../components/ProfileComponent";
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/hello-world',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },{
-      path: '/',
-      name: 'Home',
-      component: HomeComponent
-    },{
-      path: '/about',
-      name: 'about',
-      component: AboutComponent
-    },{
-      path: '/contact',
-      name: 'contact',
-      component: ContactComponent
-    },{
-      path: '/profile/:user_id',
-      name: 'profile',
-      component: ProfileComponent
-    }
-  ]
+    routes: [
+        {
+            path: '/hello-world',
+            name: 'HelloWorld',
+            component: HelloWorld
+        }, {
+            path: '/',
+            name: 'Home',
+            component: HomeComponent
+        }, {
+            path: '/about',
+            name: 'about',
+            component: AboutComponent
+        }, {
+            path: '/contact',
+            name: 'contact',
+            component: ContactComponent
+        }, {
+            path: '/profile/:user_id',
+            name: 'profile',
+            component: ProfileComponent
+        }
+    ]
 })

@@ -2,16 +2,26 @@
   <div>
     <nav>
       <ul>
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="about">About</router-link></li>
-        <li><router-link to="contact">Contact</router-link></li>
+        <li>
+          <router-link to="/">Home</router-link>
+        </li>
+        <li>
+          <router-link to="about">About</router-link>
+        </li>
+        <li>
+          <router-link to="contact">Contact</router-link>
+        </li>
       </ul>
     </nav>
-    <ul>
-      <li v-for="(id,index) in userIds" :key="index">
-        <router-link :to="{name:'profile', params:{user_id:id}}">Profile {{id}}</router-link>
-      </li>
-    </ul>
+    <div>
+      <ul>
+        <li v-for="(id,index) in userIds" :key="index">
+          <router-link :to="{name:'profile', params:{user_id:id}}">Profile {{ id }}</router-link>
+        </li>
+      </ul>
+      <button @click="Contact">Contact</button>
+      <button @click="About">About</button>
+    </div>
   </div>
 </template>
 
@@ -20,7 +30,15 @@ export default {
   name: "NavBar",
   data() {
     return {
-      userIds:['1','2','3','4','5','6','7','8']
+      userIds: ['1', '2', '3', '4', '5', '6', '7', '8']
+    }
+  },
+  methods: {
+    Contact() {
+      this.$router.push({name: 'contact'})
+    },
+    About() {
+      this.$router.push({name: 'about'})
     }
   }
 }
@@ -40,7 +58,8 @@ nav li {
   margin: 0;
   padding: 8px;
 }
-li{
+
+li {
   list-style-type: none;
 }
 </style>

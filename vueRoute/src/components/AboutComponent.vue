@@ -1,6 +1,6 @@
 <template>
   <div class="aboutComponent">
-    <h2>{{ pageTitle}}</h2>
+    <h2>{{ pageTitle }}</h2>
 
   </div>
 </template>
@@ -8,7 +8,7 @@
 <script>
 export default {
   name: 'AboutComponent',
-  data () {
+  data() {
     return {
       pageTitle: 'This is our About Page'
     }
