@@ -7,6 +7,11 @@
         <li><router-link to="contact">Contact</router-link></li>
       </ul>
     </nav>
+    <ul>
+      <li v-for="(id,index) in userIds" :key="index">
+        <router-link :to="{name:'profile', params:{user_id:id}}">Profile {{id}}</router-link>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -14,7 +19,9 @@
 export default {
   name: "NavBar",
   data() {
-    return {}
+    return {
+      userIds:['1','2','3','4','5','6','7','8']
+    }
   }
 }
 </script>
@@ -30,8 +37,10 @@ nav ul {
 
 nav li {
   display: inline-block;
-  list-style-type: none;
   margin: 0;
   padding: 8px;
+}
+li{
+  list-style-type: none;
 }
 </style>
