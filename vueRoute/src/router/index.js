@@ -9,6 +9,7 @@ import ProfileComponent from "../components/ProfileComponent";
 Vue.use(Router)
 
 export default new Router({
+    mode: 'history',
     routes: [
         {
             path: '/hello-world',

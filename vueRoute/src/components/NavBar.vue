@@ -62,4 +62,7 @@ nav li {
 li {
   list-style-type: none;
 }
+a.router-link-exact-active{
+  color: red;
+}
 </style>
